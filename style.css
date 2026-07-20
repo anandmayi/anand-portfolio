@@ -313,6 +313,35 @@ html[data-theme="dark"] .btn-primary { background: var(--oxblood); color: #12151
   letter-spacing: 0.15em;
   fill: currentColor;
 }
+.hero-clock {
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  letter-spacing: 0.02em;
+}
+
+.clock-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: clock-pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes clock-pulse {
+  0%,100% {
+    opacity:1;
+    transform:scale(1);
+  }
+  50% {
+    opacity:.35;
+    transform:scale(.8);
+  }
+}
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* ---------- Sections ---------- */
