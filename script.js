@@ -49,6 +49,26 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 revealEls.forEach(el => io.observe(el));
+const clockTimeEl = document.getElementById("clockTime");
+
+function updateClock() {
+  if (!clockTimeEl) return;
+
+  const now = new Date();
+
+  const istTime = now.toLocaleTimeString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true
+  });
+
+  clockTimeEl.textContent = istTime;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
 
 // ===== Contact form =====
 const contactForm = document.getElementById('contactForm');
